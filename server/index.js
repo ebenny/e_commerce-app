@@ -1,13 +1,30 @@
-// import express
+
+//Imports from packages
 const express = require('express');
+const mongoose = require('mongoose');
+
+//Imports from files
+const authRouter = require('./routes/auth');
+
+//initialization
 const PORT = 3000;
-
-//initializing express
 const app = express();
+const DB = 'mongodb+srv://ebennyDev:ebennyDev22@cluster0.figun.mongodb.net/?retryWrites=true&w=majority'
 
-//CREATE AN API
 
 
-app.listen(PORT, '0.0.0.0',  () => {
+//middleware
+//CLIENT -> middleware-> SERVER -> CLIENT
+app.use(authRouter);
+
+//connection
+mongoose.connect(DB).then(() => {
+    console.log('conection successful!');
+}).catch(e => {
+    console.log(e);
+})
+
+app.listen(PORT,   () => {
 console.log(`connected at port  ${PORT}`);
 })
+
