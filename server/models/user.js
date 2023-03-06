@@ -27,7 +27,7 @@ message: 'Please enter a valid email address',
         validate: {
             validator: (value) =>
 {
-return value.lenght>6;   
+return value.length>6;   
 },
 message: 'password is too short',  
 
