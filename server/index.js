@@ -9,7 +9,7 @@ const authRouter = require('./routes/auth');
 //initialization
 const PORT = 3000;
 const app = express();
-const DB = 'mongodb+srv://ebennyDev:ebennyDev22@cluster0.figun.mongodb.net/?retryWrites=true&w=majority'
+const DB = 'mongodb+srv://ebennyDev:<password>@cluster0.figun.mongodb.net/?retryWrites=true&w=majority'
 
 
 
